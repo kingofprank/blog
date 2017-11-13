@@ -26,9 +26,9 @@ boost
 
 
 这里放几个教程链接吧，在我安装的过程中给了我很多帮助。
-(无root权限安装caffe)[https://github.com/yosinski/caffe/blob/jason_public/doc/linux-no-root-install-log.md]
-(Python3.5 Anaconda3 Caffe深度学习框架搭建)[http://yingshu.ink/2017/01/12/Python3-5-Anaconda3-Caffe%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/]
-(caffe官方安装教程)[http://caffe.berkeleyvision.org/installation.html]
+[无root权限安装caffe](https://github.com/yosinski/caffe/blob/jason_public/doc/linux-no-root-install-log.md)
+[Python3.5 Anaconda3 Caffe深度学习框架搭建](http://yingshu.ink/2017/01/12/Python3-5-Anaconda3-Caffe%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/)
+[caffe官方安装教程](http://caffe.berkeleyvision.org/installation.html)
 
 
 
@@ -95,16 +95,16 @@ conda config --set show_channel_urls yes // 设置搜索时显示的通道地址
 
 CUDA® 是NVIDIA 创造的一个并行计算平台和编程模型。它利用图形处理器(GPU) 能力，实现计算性能的显著提高。由于系统已经将cuda配置好了，所以这里我只需要将cuda路径加入$PATH和$LD_LIBRARY_PATH，分别是`/usr/local/cuda-8.0/bin`和`/usr/local/cuda-8.0/lib64`。
 
-(NVIDIA驱动安装命令)[https://github.com/floydhub/dl-setup#nvidia-drivers]
+[NVIDIA驱动安装命令](https://github.com/floydhub/dl-setup#nvidia-drivers)
 
-(cuda安装命令)[https://github.com/floydhub/dl-setup#cuda]
+[cuda安装命令](https://github.com/floydhub/dl-setup#cuda)
 
 
 # cuDNN
 
 CuDNN是专门针对Deep Learning框架设计的一套GPU计算加速方案，目前支持的DL库包括Caffe，ConvNet, Torch7等。同样的系统已经安装了，可以通过`nvidia-smi`命令检查是否安装完毕。
 
-(cuDNN安装命令)[https://github.com/floydhub/dl-setup#cudnn]
+[cuDNN安装命令](https://github.com/floydhub/dl-setup#cudnn)
 
 
 # Boost
@@ -138,7 +138,7 @@ $ python setup.py build
 $ python setup.py test
 $ python setup.py install
 ```
-这样protobuf python runtime就编译和安装好了。注意protobuf python runtime是作为pip的包安装的。但是你可以从conda里面看到他(这句话节选自(Python3-5-Anaconda3-Caffe深度学习框架搭建)[http://yingshu.ink/2017/01/12/Python3-5-Anaconda3-Caffe%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/])
+这样protobuf python runtime就编译和安装好了。注意protobuf python runtime是作为pip的包安装的。但是你可以从conda里面看到他(这句话节选自[Python3-5-Anaconda3-Caffe深度学习框架搭建](http://yingshu.ink/2017/01/12/Python3-5-Anaconda3-Caffe%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/]))
 
 
 # hdf5
@@ -165,14 +165,14 @@ make PREFIX=~/Openblas install
 echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 ```
 
-(Openblas安装命令)[https://github.com/floydhub/dl-setup#openblas]
+[Openblas安装命令](https://github.com/floydhub/dl-setup#openblas)
 
 
 # Opencv
 同样的，在系统中就已经装了opencv2.4.8版本的了，不过同样在anaconda中已经有opencv3.1.0了，于是可以覆盖掉系统的版本。
 但是需要手动的编译opencv。
 
-(官方网站)[http://blog.csdn.net/yhaolpz/article/details/71375762]
+[官方网站](http://blog.csdn.net/yhaolpz/article/details/71375762)
 
 解压到要安装的位置，执行
 ```
@@ -197,7 +197,7 @@ make install
 
 终于万事俱备了，Caffe从很早以前就听说是一个很困难的东西，安装起来非常的不方便（所以搞上了TensorFlow）。这次一试果然很困难啊，但其实因为有很多linux下的东西自己不太熟悉。其实当依赖库都正确安装后，步骤非常的简单。
 
-首先到(Caffe官网)[https://github.com/BVLC/caffe]下载
+首先到[Caffe官网](https://github.com/BVLC/caffe)下载
 接着运行`cp Makefile.config.example Makefile.config`创建一个Makefile.config文件，打开后进行如下修改:
 
 ```
@@ -370,11 +370,11 @@ mv src/caffe/proto/caffe.pb.h include/caffe/proto`
 2、import caffe的时候报`Can't create weekday with n == 0`
 这个是protobuf版本的问题，当我使用了低于3.0版本的protobuf的时候，就会报这个问题，当使用大于3.0版本的时候，会提示在google.protobuf文件中某处引用模块出现问题，解决办法就是让编译版本和运行版本保持一致。
 
-3、import caffe的时候报undefined symbol: _ZN5boost6python6detail11init_moduleER11PyModuleDefPFvvE
+3、import caffe的时候报`undefined symbol: _ZN5boost6python6detail11init_moduleER11PyModuleDefPFvvE`
 
 提示boost版本不匹配，这里是因为在Makefile.config中没有正确的配置PYTHON_LIBRARIES，按照上文配置即可。
 
-4、libhdf5_hl.so.10: cannot open shared object file: No such file or directory
+4、make的时候报`libhdf5_hl.so.10: cannot open shared object file: No such file or directory`
 这个就是hdf5版本不对的问题了，同样是要用自己环境下的hdf5，需要更改路径，掩盖掉系统的。
 
 
